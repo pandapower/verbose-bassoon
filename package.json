@@ -1,0 +1,31 @@
+{
+  "name": "verbose-bassoon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "./node_modules/.bin/eslint app.js app/** test/**",
+    "test": "npm run lint && NODE_ENV=test nyc mocha --recursive test/ -t 12000 --exit && npm run test:coverage",
+    "test:coverage": "nyc check-coverage --lines 100 --functions 100 --branches 100"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "cheerio": "^1.0.0-rc.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.3",
+    "nyc": "^11.7.1",
+    "supertest": "^3.0.0"
+  }
+}
